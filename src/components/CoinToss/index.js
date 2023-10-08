@@ -2,23 +2,23 @@ import {Component} from 'react'
 import './index.css'
 
 class CoinToss extends Component {
-  state = {result: 1, tails: 0, heads: 0}
+  state = {result: 0, tails: 0, heads: 0}
 
   toggleCoin = () => {
     const tossResult = Math.floor(Math.random() * 2)
     const Result = tossResult
-      ? this.setState(prevState => ({heads: prevState.heads + 1}))
-      : this.setState(prevState => ({tails: prevState.tails + 1}))
+      ? this.setState(prevState => ({tails: prevState.tails + 1}))
+      : this.setState(prevState => ({heads: prevState.heads + 1}))
     this.setState({result: tossResult})
   }
 
   render() {
     const {result, tails, heads} = this.state
     const tossImage = result
-      ? 'https://assets.ccbp.in/frontend/react-js/heads-img.png'
-      : 'https://assets.ccbp.in/frontend/react-js/tails-img.png'
+      ? 'https://assets.ccbp.in/frontend/react-js/tails-img.png'
+      : 'https://assets.ccbp.in/frontend/react-js/heads-img.png'
 
-    console.log(tossImage)
+    console.log(result)
     return (
       <div className="container">
         <div className="coin-card">
